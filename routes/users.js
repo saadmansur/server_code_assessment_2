@@ -1,29 +1,11 @@
-
-     
-const express = require('express');
-
+const express = require("express");
 const router = express.Router();
 
-const userCredentialsController = require('../bin/controllers/UserController');
+// Correct path now that controllers are inside bin
+const userCredentialsController = require("../bin/controllers/UserController");
 
- 
+router.post("/", userCredentialsController.createUserCredentials);
 
-// GET /tourist-attractions - Retrieve all tourist attractions
-
-// router.post('/', touristAttractionController.createTouristAttraction);
-
- 
-
-// GET /tourist-attractions/:id - Retrieve a specific tourist attraction
-
-// router.get('/:id', touristAttractionController.getTouristAttractionById);
-
- 
-
-// POST /tourist-attractions - Create a new tourist attraction
-
-router.post('/', userCredentialsController.createUserCredentials);
-
- 
+router.post("/login", userCredentialsController.loginUser);
 
 module.exports = router;

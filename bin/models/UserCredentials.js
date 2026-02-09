@@ -1,20 +1,17 @@
-import { Schema, model } from 'mongoose';
-
+const { Schema, model, Types } = require("mongoose");
 
 const loginSchema = new Schema({
+  // auto-generated unique user ID
+  user_id: {
+    type: String,
+    unique: true,
+    default: () => new Types.ObjectId().toString(),
+  },
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  passwordHash: { type: String, required: true },
+});
 
-  user_id: { type: String, required: true, unique: true },
+const Login = model("Login", loginSchema);
 
-  email: { type: String, required: true },
-
-  password: { type: String, required: true },
-
-  });
-
- 
-
-const Login = model('Login', loginSchema);
-
- 
-
-export default Login;
+module.exports = Login;
