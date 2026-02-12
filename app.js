@@ -8,7 +8,7 @@ const app = express();
 
 /** MongoDB connection */
 const mongoDB =
-  "mongodb+srv://mansursaad_db_user:lNQwjNoLnD8W3Skd@analytics.oyapxcl.mongodb.net/?appName=AnalyticsDB&retryWrites=true&w=majority";
+  "mongodb+srv://mansursaad_db_user:tPa6UEiDsl5JcbYk@analytics.oyapxcl.mongodb.net/?appName=AnalyticsDB&retryWrites=true&w=majority";
 
 mongoose.set("strictQuery", false);
 mongoose
